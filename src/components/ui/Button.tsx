@@ -15,7 +15,7 @@ export const Button = ({
     return (
         <button
             className={clsx(
-                'rounded-2xl font-semibold text-2xl py-6 w-full transition',
+                'rounded-2xl cursor-pointer font-semibold text-2xl py-3 w-full transition',
                 variant === 'white' &&
                     'bg-white text-black shadow-md active:btn-white-active',
                 variant === 'purple' &&
