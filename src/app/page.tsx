@@ -1,5 +1,7 @@
+'use client';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
+import CatalogSection from './catalog/page';
 
 export default function Home() {
     return (
@@ -87,9 +89,9 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="w-full max-w-6xl mx-auto mt-8 px-4 md:px-0 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 text-center border-t border-b border-[#CDBFE0] py-8 md:py-10">
+            <section className="w-full max-w-6xl mx-auto mt-8 px-4 md:px-0 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 text-center py-8 md:py-10">
                 <div className="flex flex-col items-center">
-                    <span className="text-[2.5rem] md:text-5xl font-bold text-[var(--color-purple)] leading-none">
+                    <span className="text-[2.5rem] md:text-8xl font-bold text-[var(--color-purple)] leading-none">
                         10
                     </span>
                     <span className="text-base md:text-lg mt-2">
@@ -97,7 +99,7 @@ export default function Home() {
                     </span>
                 </div>
                 <div className="flex flex-col items-center md:border-l md:border-r border-[#CDBFE0]">
-                    <span className="text-[2.5rem] md:text-5xl font-bold text-[var(--color-purple)] leading-none">
+                    <span className="text-[2.5rem] md:text-8xl font-bold text-[var(--color-purple)] leading-none">
                         500+
                     </span>
                     <span className="text-base md:text-lg mt-2">
@@ -105,7 +107,7 @@ export default function Home() {
                     </span>
                 </div>
                 <div className="flex flex-col items-center">
-                    <span className="text-[2.5rem] md:text-5xl font-bold text-[var(--color-purple)] leading-none">
+                    <span className="text-[2.5rem] md:text-8xl font-bold text-[var(--color-purple)] leading-none">
                         2000+
                     </span>
                     <span className="text-base md:text-lg mt-2">
@@ -156,7 +158,7 @@ export default function Home() {
                             шаблонно.
                         </p>
                     </div>
-                    {/* 3 */}
+
                     <div className="flex flex-col items-center gap-4">
                         <span className="flex items-center justify-center w-28 h-28 md:w-32 md:h-32 rounded-full bg-[var(--color-purple)] mb-2">
                             <Image
@@ -177,19 +179,62 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+            <section className="w-full max-w-6xl mx-auto mt-12 px-4 md:px-0">
+                <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 md:mb-14">
+                    Наші клієнти та партнери
+                </h2>
+                <div className="flex flex-col gap-8 md:gap-10 items-center">
+                    <div className="flex flex-wrap justify-center gap-x-10 gap-y-6 w-full">
+                        <Image
+                            src="/assets/images/partners/vartis.png"
+                            alt="Vartis"
+                            width={240}
+                            height={90}
+                            className="object-contain h-[90px]"
+                        />
+                        <Image
+                            src="/assets/images/partners/kromberg.png"
+                            alt="Kromberg & Schubert"
+                            width={300}
+                            height={90}
+                            className="object-contain h-[90px]"
+                        />
+                        <Image
+                            src="/assets/images/partners/atb.png"
+                            alt="АТБ"
+                            width={180}
+                            height={90}
+                            className="object-contain h-[90px]"
+                        />
+                        <Image
+                            src="/assets/images/partners/modern-expo.png"
+                            alt="Modern Expo"
+                            width={260}
+                            height={90}
+                            className="object-contain h-[90px]"
+                        />
+                    </div>
+
+                    <div className="flex flex-wrap justify-center gap-x-10 gap-y-6 w-full">
+                        <Image
+                            src="/assets/images/partners/jasmine.png"
+                            alt="Jasmine"
+                            width={240}
+                            height={90}
+                            className="object-contain h-[90px]"
+                        />
+                        <Image
+                            src="/assets/images/partners/epicentr.png"
+                            alt="Епіцентр"
+                            width={300}
+                            height={90}
+                            className="object-contain h-[90px]"
+                        />
+                    </div>
+                </div>
+            </section>
+            <CatalogSection />
         </>
     );
 }
-
-export const metadata = {
-    title: 'Реклама на білбордах по всій Україні — Оренда рекламних площин',
-    description:
-        'Оренда білбордів по всій Україні. Каталог з фільтрами, фото, геолокацією. Зручне замовлення онлайн.',
-    openGraph: {
-        title: 'Реклама на білбордах по всій Україні — Оренда рекламних площин',
-        description:
-            'Оренда білбордів по всій Україні. Каталог з фільтрами, фото, геолокацією. Зручне замовлення онлайн.',
-        images: ['/og-main.jpg'],
-        type: 'website',
-    },
-};
