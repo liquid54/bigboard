@@ -28,37 +28,37 @@ const cards = [
         id: 1,
         city: 'Дніпро',
         address: 'ТЦ Пасаж, пр. Дмитра Яворницького 50',
-        img: '/assets/images/catalog/1.jpg',
+        img: '/assets/images/catalog/1.png',
     },
     {
         id: 2,
         city: 'Дніпро',
         address: 'ТЦ Пасаж, пр. Дмитра Яворницького 50',
-        img: '/assets/images/catalog/1.jpg',
+        img: '/assets/images/catalog/1.png',
     },
     {
         id: 3,
         city: 'Дніпро',
         address: 'ТЦ Пасаж, пр. Дмитра Яворницького 50',
-        img: '/assets/images/catalog/1.jpg',
+        img: '/assets/images/catalog/1.png',
     },
     {
         id: 4,
         city: 'Дніпро',
         address: 'Заводська Набережна Вул., 4 - Червоний Камінь Вул., В Центр',
-        img: '/assets/images/catalog/2.jpg',
+        img: '/assets/images/catalog/1.png',
     },
     {
         id: 5,
         city: 'Дніпро',
         address: 'ТЦ Пасаж, пр. Дмитра Яворницького 50',
-        img: '/assets/images/catalog/1.jpg',
+        img: '/assets/images/catalog/1.png',
     },
     {
         id: 6,
         city: 'Дніпро',
         address: 'ТЦ Пасаж, пр. Дмитра Яворницького 50',
-        img: '/assets/images/catalog/1.jpg',
+        img: '/assets/images/catalog/1.png',
     },
 ];
 

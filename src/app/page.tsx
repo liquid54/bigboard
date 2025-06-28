@@ -2,6 +2,9 @@
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import CatalogSection from './catalog/page';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import LeadForm from '@/components/forms/LeadForm';
 
 export default function Home() {
     return (
@@ -21,7 +24,7 @@ export default function Home() {
                         clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 80%)',
                     }}
                 />
-                <div className="relative z-10 flex flex-1 flex-col justify-center pt-30 sm:pt-0 pl-6 md:pl-12 gap-8 max-w-[600px]">
+                <div className="relative z-10 flex font-semibold font-gotham flex-1 flex-col justify-center pt-30 sm:pt-0 pl-6 md:pl-12 gap-8 max-w-[600px]">
                     <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
                         Реклама на <br /> білбордах по <br /> всій Україні
                     </h1>
@@ -268,6 +271,56 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            {/* Відгуки */}
+            <section className="w-full max-w-6xl mx-auto mt-16 px-4 md:px-0">
+                <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 md:mb-14">
+                    Відгуки
+                </h2>
+                <Swiper
+                    spaceBetween={24}
+                    slidesPerView={1}
+                    breakpoints={{
+                        768: { slidesPerView: 3 },
+                    }}
+                    pagination={{ clickable: true }}
+                    className="!pb-10"
+                >
+                    {[1, 2, 3, 4].map((n) => (
+                        <SwiperSlide key={n}>
+                            <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col h-full min-h-[370px] max-w-[420px] mx-auto">
+                                <div className="flex items-center justify-between mb-2">
+                                    <div className="flex items-center gap-3">
+                                        <Image
+                                            src="/assets/images/partners/atb.png"
+                                            alt="АТБ"
+                                            width={60}
+                                            height={32}
+                                            className="object-contain h-8 w-auto"
+                                        />
+                                        <div className="font-semibold text-base md:text-lg">
+                                            Маркетинг-відділ мережі
+                                            &quot;АТБ&quot;
+                                        </div>
+                                    </div>
+                                    <span className="text-xs text-gray-500">
+                                        15.03.2023
+                                    </span>
+                                </div>
+                                <div className="text-sm md:text-base mb-4">
+                                    Все чітко, оперативно та з урахуванням наших
+                                    побажань. Дякуємо за професіоналізм!
+                                </div>
+                                <div className="flex-1 flex items-center justify-center">
+                                    <div className="w-full h-32 md:h-36 bg-[#E5E5E5] rounded-xl flex items-center justify-center text-lg text-black/80">
+                                        Відео
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </section>
+            <LeadForm />
         </>
     );
 }
