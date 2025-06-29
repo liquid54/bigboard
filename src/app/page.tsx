@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
-import CatalogSection from './catalog/page';
+import CatalogSection from "@/components/CatalogSection";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import LeadForm from '@/components/forms/LeadForm';
@@ -28,7 +28,7 @@ export default function Home() {
                     <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
                         Реклама на <br /> білбордах по <br /> всій Україні
                     </h1>
-                    <Button variant="white" className="max-w-xs">
+                    <Button variant="white" className="max-w-sm text-2xl">
                         Каталог
                     </Button>
                     <span className="text-white/80 text-lg pt-4">
@@ -46,14 +46,14 @@ export default function Home() {
                             sizes="(max-width: 768px) 100vw, 706px"
                         />
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] flex flex-col items-center">
-                            <span className="text-xl md:text-4xl text-[var(--color-purple)] font-bold text-center drop-shadow-md">
+                            <span className="text-xl md:text-[40px] text-[var(--color-purple)] font-bold text-center drop-shadow-md">
                                 ТУТ МОЖЕ БУТИ
                                 <br />
                                 ВАША РЕКЛАМА
                             </span>
                             <Button
                                 variant="purple"
-                                className="max-w-xs w-full mt-6"
+                                className="max-w-xs w-full mt-12 text-xl "
                             >
                                 Залишити заявку
                             </Button>
