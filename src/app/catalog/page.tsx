@@ -1,4 +1,3 @@
-'use client';
 import Button from '@/components/ui/Button';
 import CatalogSection from '@/components/CatalogSection';
 
@@ -40,3 +39,22 @@ export default function Catalog() {
         </>
     );
 }
+
+export const metadata = {
+    title: 'Каталог білбордів в Україні — Фото, мапа, фільтри',
+    description:
+        'Каталог білбордів по всій Україні з фото, адресами та фільтрами. Знайдіть ідеальну рекламну площину для вашого бізнесу.',
+    keywords: [
+        'каталог білбордів',
+        'рекламні площини',
+        'фільтри',
+        'Україна',
+        'зовнішня реклама',
+    ],
+    openGraph: {
+        title: 'Каталог білбордів в Україні — Фото, мапа, фільтри',
+        description:
+            'Каталог білбордів по всій Україні з фото, адресами та фільтрами. Знайдіть ідеальну рекламну площину для вашого бізнесу.',
+        url: 'https://modern-expo.com/catalog',
+    },
+};

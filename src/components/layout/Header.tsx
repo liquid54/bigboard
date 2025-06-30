@@ -6,11 +6,25 @@ import Link from 'next/link';
 const nav = [
     { label: 'Додаткові послуги', href: '#' },
     { label: 'Каталог', href: '/catalog' },
-    { label: 'Залишити заявку', href: '#' },
+    { label: 'Залишити заявку', href: '/#contact' },
 ];
 
 export default function Header() {
     const [open, setOpen] = useState(false);
+
+    const handleSmoothScroll = (
+        e: React.MouseEvent<HTMLAnchorElement>,
+        href: string
+    ) => {
+        e.preventDefault();
+        const targetId = href.split('#')[1];
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+        setOpen(false);
+    };
+
     return (
         <header className="header-blur max-w-8xl mx-auto fixed top-0 left-0 w-full z-30 flex items-center justify-between px-4 py-4 bg-[var(--color-bg)]">
             <Link
@@ -34,6 +48,7 @@ export default function Header() {
                             key={item.label}
                             href={item.href}
                             className="font-gotham font-medium text-white text-lg hover:underline underline-offset-4 transition"
+                            onClick={(e) => handleSmoothScroll(e, item.href)}
                         >
                             {item.label}
                         </a>
@@ -132,7 +147,9 @@ export default function Header() {
                                     key={item.label}
                                     href={item.href}
                                     className="font-gotham font-medium text-white text-2xl"
-                                    onClick={() => setOpen(false)}
+                                    onClick={(e) =>
+                                        handleSmoothScroll(e, item.href)
+                                    }
                                 >
                                     {item.label}
                                 </a>
