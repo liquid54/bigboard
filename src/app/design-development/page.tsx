@@ -4,10 +4,6 @@ import Button from '@/components/ui/Button';
 import ReviewsSection from '@/components/common/ReviewsSection';
 import Image from 'next/image';
 import LeadForm from '@/components/forms/LeadForm';
-import {Pagination} from 'swiper/modules';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Arrow} from '@/components/ui/icons';
-import {useRef} from 'react';
 import ImageSlider from '@/components/common/ImageSlider';
 
 export default function DesignDevelopmentPage() {
