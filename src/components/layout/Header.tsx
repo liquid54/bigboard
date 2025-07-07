@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {Phone} from '@/components/ui/icons';
 import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+
 
 const nav = [
     { label: 'Додаткові послуги', href: '#' },
@@ -19,6 +21,8 @@ export default function Header() {
 
 
     const router = useRouter();
+    const pathname = usePathname();
+
 
     const tooltipLinks = [
         { label: 'Розробка дизайну', href: '/design-development' },
@@ -52,7 +56,7 @@ export default function Header() {
     const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
 
-        if (router.pathname === '/') {
+        if (pathname === '/') {
             const el = document.getElementById('contact');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
             setOpen(false);

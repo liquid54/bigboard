@@ -1,6 +1,7 @@
 import Button from '@/components/ui/Button';
 import CatalogSection from '@/components/CatalogSection';
 
+
 export default function Catalog() {
     return (
         <>

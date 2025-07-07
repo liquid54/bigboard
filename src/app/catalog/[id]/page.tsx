@@ -61,9 +61,14 @@ export default async function BillboardPage({
             <main className="w-full max-w-6xl mx-auto mt-8 px-4 md:px-0">
                 <Link
                     href="/catalog"
-                    className="text-gray-400 text-base mb-4 hover:underline"
+                    className="text-gray-400  text-base mb-4 flex items-center gap-[10px]"
                 >
-                    &larr; Назад
+                    <Image
+                        src={'/assets/icons/arrow-left.svg'}
+                        alt={billboard.city}
+                        width={12}
+                        height={22}
+                    />  Назад
                 </Link>
                 <div className="bg-white rounded-2xl shadow-lg p-4 md:p-8 flex flex-col md:flex-row gap-6 items-center md:items-stretch">
                     <div className="w-full md:w-1/2 flex-shrink-0">

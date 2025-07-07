@@ -6,9 +6,11 @@ import 'swiper/css/pagination';
 import Image from 'next/image';
 import { useRef } from 'react';
 import { Arrow } from '@/components/ui/icons';
+import type { Swiper as SwiperClass } from 'swiper';
+
 
 export default function ReviewsSection() {
-    const swiperRef = useRef<any>(null);
+    const swiperRef = useRef<SwiperClass | null>(null);
 
     const goPrev = () => swiperRef.current?.slidePrev();
     const goNext = () => swiperRef.current?.slideNext();

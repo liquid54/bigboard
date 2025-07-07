@@ -7,6 +7,8 @@ import 'swiper/css/pagination';
 import { useIsMobile } from '@/hooks/useMediaQuery';
 import { Arrow } from '@/components/ui/icons';
 import { useRef } from 'react';
+import type { Swiper as SwiperClass } from 'swiper';
+
 
 interface ImageSliderProps {
     images: string[];
@@ -14,7 +16,7 @@ interface ImageSliderProps {
 
 export default function ImageSlider({ images }: ImageSliderProps) {
     const isMobile = useIsMobile();
-    const swiperRef = useRef<any>(null);
+    const swiperRef = useRef<SwiperClass | null>(null);
 
     const goPrev = () => swiperRef.current?.slidePrev();
     const goNext = () => swiperRef.current?.slideNext();

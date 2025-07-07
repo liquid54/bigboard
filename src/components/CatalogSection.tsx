@@ -7,6 +7,7 @@ import CustomCheckbox from './ui/CustomCheckbox';
 import cards from './catalog-cards-data';
 import Link from 'next/link';
 import {Arrow} from '@/components/ui/icons';
+import TopPopup from '@/components/common/TopPopup';
 
 const regions = [
     { label: 'Дніпропетровська область', value: 'dnp' },
@@ -136,6 +137,8 @@ export default function CatalogSection({
     const [isMobile, setIsMobile] = useState(false);
     const [nearby, setNearby] = useState(false);
     const perPage = isMobile ? 3 : 6;
+    const [showPopup, setShowPopup] = useState(false);
+
     const filteredCards = cards.filter(
         (card) =>
             card.region === region &&
@@ -214,8 +217,9 @@ export default function CatalogSection({
                                 />
                             </div>
                             <Button
-                                className="w-full h-[48px]  md:h-auto md:w-full bg-[var(--color-purple)] text-white rounded-2xl text-base md:text-lg"
+                                className="w-full h-[48px] md:h-auto md:w-full bg-[var(--color-purple)] text-white rounded-2xl text-base md:text-lg"
                                 variant="purple"
+                                onClick={() => setShowPopup(true)}
                             >
                                 Пошук
                             </Button>
@@ -341,6 +345,21 @@ export default function CatalogSection({
                 )}
             </section>
             <CallToActionSection />
+            <TopPopup isOpen={showPopup} onClose={() => setShowPopup(false)}>
+                <div className={'flex items-center justify-center flex-col gap-[30px] '}>
+                    <Image
+                        src="/assets/icons/popup-icon.svg"
+                        alt="search icon"
+                        width={117}
+                        height={117}
+                        className="object-contain h-[117px] w-[117px]"
+                    />
+                    <p className={'max-w-[948px] text-[18px] text-center text-black'}>Не переживайте, якщо не знайшли потрібний білборд — просто залиште заявку, і ми зробимо все за вас! <br/> Ми щодня працюємо з сотнями локацій, тому знайти ідеальну — це наша справа</p>
+                    <Button variant="purple" className="w-full mt-[20px] max-w-[728px]">
+                        Залишити заявку
+                    </Button>
+                </div>
+            </TopPopup>
         </>
     );
 }

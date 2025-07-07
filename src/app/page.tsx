@@ -4,23 +4,15 @@ import Button from '@/components/ui/Button';
 import CatalogSection from '@/components/CatalogSection';
 import LeadForm from '@/components/forms/LeadForm';
 import ReviewsSection from '@/components/common/ReviewsSection';
-import {useSearchParams} from 'next/navigation';
-import {useEffect} from 'react';
+import ScrollHandler from '@/components/common/ScrollHandler';
+import {Suspense} from 'react';
 
 export default function Home() {
-    const searchParams = useSearchParams();
-
-    useEffect(() => {
-        const scrollTo = searchParams.get('scrollTo');
-        if (scrollTo === 'contact') {
-            const el = document.getElementById(scrollTo);
-            if (el) {
-                el.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    }, [searchParams]);
     return (
         <>
+            <Suspense fallback={null}>
+                <ScrollHandler />
+            </Suspense>
             <main
                 className="relative md:h-[682px] h-[100%] flex flex-col sm:flex-row !items-end justify-between bg-[var(--color-bg)] overflow-hidden"
                 style={{
