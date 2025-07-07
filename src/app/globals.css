@@ -38,6 +38,30 @@ body {
   box-shadow: 0 4px 10.6px 0 rgba(255, 255, 255, 0.5);
 }
 
+.custom-pagination .swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background-color: #750DBE;
+  border-radius: 9999px;
+  transition: background-color 0.3s;
+  margin: 0 4px;
+}
+
+.card-shadow {
+  box-shadow: 5px 4px 5px 4px #0000004D;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background-color: #750DBE;
+}
+
 @theme inline {
 
   --color-purple: var(--color-purple);

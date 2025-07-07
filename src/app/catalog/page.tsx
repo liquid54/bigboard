@@ -5,7 +5,7 @@ export default function Catalog() {
     return (
         <>
             <div
-                className="w-full"
+                className="w-full pt-20 md:pt-0"
                 style={{
                     backgroundImage: "url('/assets/images/bg.svg')",
                     backgroundSize: 'cover',
@@ -13,7 +13,7 @@ export default function Catalog() {
                     backgroundRepeat: 'no-repeat',
                 }}
             >
-                <div className="max-w-8xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 md:gap-[88px] py-12 md:py-20 px-4 md:pt-28 md:px-12">
+                <div className="w-full mx-auto max-w-[1440px]  flex flex-col md:flex-row items-center justify-between gap-8 md:gap-[88px] py-12 md:py-20 px-4 md:pt-28 md:px-[60px]">
                     <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left max-w-xl md:max-w-2xl">
                         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                             Розмісти свою рекламу вже сьогодні!

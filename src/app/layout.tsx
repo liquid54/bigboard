@@ -9,7 +9,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="uk">
-            <body className="antialiased bg-[var(--color-bg)] ">
+            <body>
                 <Header />
                 {children}
                 <Footer />

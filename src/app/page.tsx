@@ -1,71 +1,92 @@
+"use client"
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import CatalogSection from '@/components/CatalogSection';
 import LeadForm from '@/components/forms/LeadForm';
 import ReviewsSection from '@/components/common/ReviewsSection';
+import {useSearchParams} from 'next/navigation';
+import {useEffect} from 'react';
 
 export default function Home() {
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        const scrollTo = searchParams.get('scrollTo');
+        if (scrollTo === 'contact') {
+            const el = document.getElementById(scrollTo);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }, [searchParams]);
     return (
         <>
-        <main
-            className="relative min-h-[calc(100vh-80px)] flex flex-col sm:flex-row items-stretch justify-between bg-[var(--color-bg)] overflow-hidden"
-            style={{
-                backgroundImage: "url('/assets/images/bg.svg')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-            }}
-        >
-            <div
-                className="absolute inset-0 opacity-90 z-0"
-                    style={{
+            <main
+                className="relative md:h-[682px] h-[100%] flex flex-col sm:flex-row !items-end justify-between bg-[var(--color-bg)] overflow-hidden"
+                style={{
+                    backgroundImage: "url('/assets/images/bg.svg')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                }}
+            >
+                <div className="w-full mx-auto max-w-[1440px] flex md:flex-row flex-col justify-between gap-10">
+                    <div
+                        className="absolute inset-0 opacity-90 z-0"
+                        style={{
                         clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 80%)',
                     }}
-            />
-                <div className="relative z-10 flex font-semibold font-gotham flex-1 flex-col items-center md:items-start justify-center pt-30 sm:pt-0 pl-6 md:pl-12 gap-8 max-w-[600px]">
+                />
+                <div className="relative z-10 flex font-semibold font-gotham flex-1 flex-col items-center md:items-start justify-center md:p-[0px] pt-30 gap-8 max-w-[600px]">
+                    <div className={'pl-[20px] flex items-center justify-center flex-col gap-[24px]'}>
                     <h1 className="text-5xl hidden md:block md:text-6xl font-bold text-white leading-tight">
-                    Реклама на <br /> білбордах по <br /> всій Україні
-                </h1>
-                    <h1 className="text-5xl text-center  md:hidden font-bold text-white leading-tight">
+                        Реклама на <br /> білбордах по <br /> всій Україні
+                    </h1>
+                    <h1 className="text-[36px] text-center  md:hidden font-bold text-white leading-tight">
                         Реклама на <br /> білбордах по всій <br /> Україні
                     </h1>
                     <Button
                         variant="white"
-                        className="max-w-sm rounded-3xl md:rounded-xl  text-2xl"
+                        className="max-w-sm  rounded-3xl md:rounded-xl  text-2xl"
                     >
-                    Каталог
-                </Button>
-                    <span className="text-white/80 hidden md:block text-lg pt-4">
-                    Працюємо з 2015 року
-                </span>
-            </div>
-                <div className="relative mt-5 md:mt-0 z-10 flex flex-1 items-center sm:items-end justify-center pr-3 md:pr-0">
-                <div className="relative w-full max-w-[706px] aspect-[706/555] h-auto flex items-center justify-center">
-                    <Image
-                        src="/assets/images/bilboard.png"
-                        alt="Білборд"
-                        fill
-                        className="object-contain"
-                        priority
-                        sizes="(max-width: 768px) 100vw, 706px"
-                    />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] flex flex-col items-center">
-                            <span className="text-2xl md:text-[40px] text-[var(--color-purple)] font-bold text-center drop-shadow-md">
-                            ТУТ МОЖЕ БУТИ
-                            <br />
-                            ВАША РЕКЛАМА
-                        </span>
-                        <Button
-                            variant="purple"
-                                className="max-w-xs rounded-3xl md:rounded-xl w-full mt-12 text-xl "
-                        >
-                            Залишити заявку
-                        </Button>
+                        Каталог
+                    </Button>
+                    </div>
+                    <div className={'flex flex-col gap-[16px]'}>
+                    <span className="text-white/80 pl-[20px] hidden md:block text-lg pt-4">
+                        Працюємо з 2015 року
+                    </span>
+                        <div className={'h-[1px] hidden md:block w-[329px] ml-[-70px] bg-white'}></div>
                     </div>
                 </div>
-            </div>
-        </main>
-            <section className="relative z-10 w-full max-w-6xl mx-auto mt-12 px-4 md:px-0 flex flex-col-reverse md:flex-row gap-8 md:gap-12 items-stretch">
+                <div className="relative mt-5 md:mt-0 z-10 flex flex-1 items-end sm:items-end justify-end md:pr-0">
+                    <div className="relative w-full max-w-[706px] aspect-[706/555] h-auto flex items-center justify-center">
+                        <Image
+                            src="/assets/images/bilboard.png"
+                            alt="Білборд"
+                            fill
+                            className="object-contain"
+                            priority
+                            sizes="(max-width: 768px) 100vw, 706px"
+                        />
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] flex flex-col items-center">
+                            <span className="text-2xl md:text-[40px] text-[var(--color-purple)] font-bold text-center drop-shadow-md">
+                                ТУТ МОЖЕ БУТИ
+                                <br />
+                                ВАША РЕКЛАМА
+                            </span>
+                            <Button
+                                variant="purple"
+                                className="max-w-xs rounded-3xl md:rounded-xl w-full mt-12 text-xl "
+                            >
+                                Залишити заявку
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </main>
+            <section className="relative z-10 w-full max-w-[1321px] mx-auto mt-12 px-4 md:px-0 flex flex-col-reverse md:flex-row gap-8 md:gap-12 items-stretch">
                 <div className="flex flex-col items-center md:hidden">
                     <a
                         href="#"
@@ -75,7 +96,7 @@ export default function Home() {
                     </a>
                 </div>
                 <div className="flex-1 flex items-center justify-center">
-                    <div className="w-full max-w-[420px] aspect-[16/10] h-[350px] md:h-auto bg-[#CDBFE0] rounded-2xl flex items-center justify-center">
+                    <div className="w-full max-w-[694px] aspect-[16/10] h-[350px] md:h-auto bg-[#CDBFE0] rounded-2xl flex items-center justify-center">
                         <span className="text-2xl md:text-3xl font-semibold text-black">
                             Відео
                         </span>
@@ -136,7 +157,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="w-full hidden md:grid max-w-6xl mx-auto mt-8 px-4 md:px-0  grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 text-center py-8 md:py-10">
+            <section className="w-full hidden md:grid max-w-[1321px] mx-auto mt-8 px-4 md:px-0  grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 text-center py-8 md:py-10">
                 <div className="flex flex-col items-center">
                     <span className="text-[2.5rem] md:text-8xl font-bold text-[var(--color-purple)] leading-none">
                         10
@@ -163,7 +184,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="w-full max-w-6xl mx-auto mt-12 px-4 md:px-0">
+            <section className="w-full max-w-[1321px] mx-auto mt-12 px-4 md:px-0">
                 <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 md:mb-14">
                     Наші переваги
                 </h2>
@@ -227,7 +248,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="w-full max-w-6xl mx-auto mt-12 px-4 md:px-0">
+            <section className="w-full max-w-[1321px] mx-auto mt-[88px] px-4 md:px-0">
                 <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 md:mb-14">
                     Наші клієнти та партнери
                 </h2>
@@ -282,39 +303,7 @@ export default function Home() {
                 </div>
             </section>
             <CatalogSection />
-            <section className="w-full mt-16 px-0">
-                <div
-                    className="w-full"
-                    style={{
-                        backgroundImage: "url('/assets/images/bg.svg')",
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat',
-                    }}
-                >
-                    <div className="max-w-6xl mx-auto px-4 md:px-0">
-                        <div className="rounded-2xl md:rounded-3xl overflow-hidden flex flex-col md:flex-row items-center md:items-stretch justify-between py-10 md:py-16 px-4 md:px-16">
-                            <div className="flex-1 flex flex-col items-center md:items-start justify-center text-center md:text-left gap-4">
-                                <h2 className="text-2xl md:text-4xl font-bold text-white mb-2">
-                                    Почни вже зараз!
-                                </h2>
-                                <p className="text-white text-base md:text-lg max-w-xl">
-                                    Зв&apos;яжіться з нами і ми допоможемо Вам
-                                    розмістити рекламу
-                                </p>
-                            </div>
-                            <div className="flex-1 flex justify-center md:justify-end items-center mt-8 md:mt-0">
-                                <Button
-                                    variant="white"
-                                    className="text-black text-xl md:text-2xl font-bold px-10 py-4 rounded-2xl md:rounded-2xl min-w-[220px] md:min-w-[260px] shadow-md"
-                                >
-                                    Зв&apos;язатись
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
             <ReviewsSection />
             <section id="contact">
                 <LeadForm />
