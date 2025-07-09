@@ -5,7 +5,8 @@ import CatalogSection from '@/components/CatalogSection';
 import LeadForm from '@/components/forms/LeadForm';
 import ReviewsSection from '@/components/common/ReviewsSection';
 import ScrollHandler from '@/components/common/ScrollHandler';
-import {Suspense} from 'react';
+import React, {Suspense} from 'react';
+import Link from 'next/link';
 
 export default function Home() {
     return (
@@ -140,12 +141,12 @@ export default function Home() {
                         Нам довіряють десятки відомих компаній, адже ми це
                         стабільність, надійність та якість, перевірені часом.
                     </p>
-                    <a
-                        href="#"
-                        className="text-[var(--color-purple)] hidden md:block underline text-base md:text-lg mt-2 md:mt-4 w-fit"
+                    <Link
+                        href="/catalog"
+                        className="text-[var(--color-purple)] text-[18px] hidden md:block underline  mt-2 md:mt-4 w-fit"
                     >
                         Каталог
-                    </a>
+                    </Link>
                 </div>
             </section>
 
