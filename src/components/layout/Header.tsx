@@ -193,7 +193,8 @@ export default function Header() {
                         </a>
                     )}
                 </div>
-                <span className="cursor-pointer text-white">
+                <Link href={'/cart'}>
+    <span className={`cursor-pointer ${pathname === '/cart' ? 'text-black' : 'text-white'}`}>
                     <svg
                         width="24"
                         height="24"
@@ -207,6 +208,7 @@ export default function Header() {
                         />
                     </svg>
                 </span>
+                </Link>
                 <span className="cursor-pointer hidden md:inline">
                     <Image
                         src="/assets/icons/user.svg"

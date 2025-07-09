@@ -1,0 +1,142 @@
+export const regionLabels: Record<string, string> = {
+    dnp: 'Дніпропетровська',
+    kyiv: 'Київська',
+    lviv: 'Львівська',
+    odesa: 'Одеська',
+    kharkiv: 'Харківська',
+    zaporizhzhia: 'Запорізька',
+    poltava: 'Полтавська',
+    vinnytsia: 'Вінницька',
+    cherkasy: 'Черкаська',
+    chernivtsi: 'Чернівецька',
+    ivano: 'Івано-Франківська',
+    ternopil: 'Тернопільська',
+    volyn: 'Волинська',
+    zakarpattia: 'Закарпатська',
+    sumy: 'Сумська',
+    chernihiv: 'Чернігівська',
+    mykolaiv: 'Миколаївська',
+    kherson: 'Херсонська',
+    zhytomyr: 'Житомирська',
+    rivne: 'Рівненська',
+    lutsk: 'Луцька',
+    uzhhorod: 'Ужгородська',
+    kropyvnytskyi: 'Кропивницька',
+    luhansk: 'Луганська',
+    donetsk: 'Донецька',
+};
+
+export const regions = [
+    { label: 'Дніпропетровська область', value: 'dnp' },
+    { label: 'Київська область', value: 'kyiv' },
+    { label: 'Львівська область', value: 'lviv' },
+    { label: 'Одеська область', value: 'odesa' },
+    { label: 'Харківська область', value: 'kharkiv' },
+    { label: 'Запорізька область', value: 'zaporizhzhia' },
+    { label: 'Полтавська область', value: 'poltava' },
+    { label: 'Вінницька область', value: 'vinnytsia' },
+    { label: 'Черкаська область', value: 'cherkasy' },
+    { label: 'Чернівецька область', value: 'chernivtsi' },
+    { label: 'Івано-Франківська область', value: 'ivano' },
+    { label: 'Тернопільська область', value: 'ternopil' },
+    { label: 'Волинська область', value: 'volyn' },
+    { label: 'Закарпатська область', value: 'zakarpattia' },
+    { label: 'Сумська область', value: 'sumy' },
+    { label: 'Чернігівська область', value: 'chernihiv' },
+    { label: 'Миколаївська область', value: 'mykolaiv' },
+    { label: 'Херсонська область', value: 'kherson' },
+    { label: 'Житомирська область', value: 'zhytomyr' },
+    { label: 'Рівненська область', value: 'rivne' },
+    { label: 'Луцька область', value: 'lutsk' },
+    { label: 'Ужгородська область', value: 'uzhhorod' },
+    { label: 'Кропивницька область', value: 'kropyvnytskyi' },
+    { label: 'Луганська область', value: 'luhansk' },
+    { label: 'Донецька область', value: 'donetsk' },
+];
+export const cities: Record<string, { label: string; value: string }[]> = {
+    dnp: [
+        { label: 'Дніпро', value: 'dnipro' },
+        { label: 'Кривий Ріг', value: 'kriviy' },
+    ],
+    kyiv: [
+        { label: 'Київ', value: 'kyiv' },
+        { label: 'Біла Церква', value: 'bc' },
+    ],
+    lviv: [
+        { label: 'Львів', value: 'lviv' },
+        { label: 'Дрогобич', value: 'drohobych' },
+    ],
+    odesa: [
+        { label: 'Одеса', value: 'odesa' },
+        { label: 'Ізмаїл', value: 'izmail' },
+    ],
+    kharkiv: [
+        { label: 'Харків', value: 'kharkiv' },
+        { label: 'Лозова', value: 'lozova' },
+    ],
+    zaporizhzhia: [
+        { label: 'Запоріжжя', value: 'zaporizhzhia' },
+        { label: 'Мелітополь', value: 'melitopol' },
+    ],
+    poltava: [
+        { label: 'Полтава', value: 'poltava' },
+        { label: 'Кременчук', value: 'kremenchuk' },
+    ],
+    vinnytsia: [
+        { label: 'Вінниця', value: 'vinnytsia' },
+        { label: 'Жмеринка', value: 'zhmerynka' },
+    ],
+    cherkasy: [
+        { label: 'Черкаси', value: 'cherkasy' },
+        { label: 'Умань', value: 'uman' },
+    ],
+    chernivtsi: [
+        { label: 'Чернівці', value: 'chernivtsi' },
+        { label: 'Новодністровськ', value: 'novodnistrovsk' },
+    ],
+    ivano: [
+        { label: 'Івано-Франківськ', value: 'ivano' },
+        { label: 'Калуш', value: 'kalush' },
+    ],
+    ternopil: [
+        { label: 'Тернопіль', value: 'ternopil' },
+        { label: 'Чортків', value: 'chortkiv' },
+    ],
+    volyn: [
+        { label: 'Луцьк', value: 'lutsk' },
+        { label: 'Ковель', value: 'kovel' },
+    ],
+    zakarpattia: [
+        { label: 'Ужгород', value: 'uzhhorod' },
+        { label: 'Мукачево', value: 'mukachevo' },
+    ],
+    sumy: [
+        { label: 'Суми', value: 'sumy' },
+        { label: 'Конотоп', value: 'konotop' },
+    ],
+    chernihiv: [
+        { label: 'Чернігів', value: 'chernihiv' },
+        { label: 'Ніжин', value: 'nizhyn' },
+    ],
+    mykolaiv: [
+        { label: 'Миколаїв', value: 'mykolaiv' },
+        { label: 'Вознесенськ', value: 'voznesensk' },
+    ],
+    kherson: [
+        { label: 'Херсон', value: 'kherson' },
+        { label: 'Нова Каховка', value: 'novakahovka' },
+    ],
+    zhytomyr: [
+        { label: 'Житомир', value: 'zhytomyr' },
+        { label: 'Бердичів', value: 'berdychiv' },
+    ],
+    rivne: [
+        { label: 'Рівне', value: 'rivne' },
+        { label: 'Дубно', value: 'dubno' },
+    ],
+    lutsk: [{ label: 'Луцьк', value: 'lutsk' }],
+    uzhhorod: [{ label: 'Ужгород', value: 'uzhhorod' }],
+    kropyvnytskyi: [{ label: 'Кропивницький', value: 'kropyvnytskyi' }],
+    luhansk: [{ label: 'Луганськ', value: 'luhansk' }],
+    donetsk: [{ label: 'Донецьк', value: 'donetsk' }],
+};
